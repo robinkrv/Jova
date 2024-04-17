@@ -113,6 +113,7 @@ body {
     color: #ffffff; /* Couleur du texte (blanc) */
     text-shadow: 1px 1px 2px #000000; /* Ombrage léger */
     margin-left: 10px; /* Marge à gauche pour l'espacement */
+    padding-right: 25px;
 }
 
 .bottom-div-text, .bottom-div-item {
