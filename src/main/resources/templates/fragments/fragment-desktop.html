@@ -3,8 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="container-fluid">
+    <!-- Div en haut de la page (10% du haut) -->
+    <div class="row" style="height: 10vh;">
+        <div class="col-12 text-center">
+            <!-- Logo au centre en haut -->
+            <img src="chemin/vers/logo.png" alt="Logo" style="max-height: 100%;">
+        </div>
+    </div>
+    <!-- Div pour la navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Contenu de la navbar Bootstrap -->
+        <a class="navbar-brand" href="#">Navbar</a>
+        <!-- Bouton hamburger pour les petits écrans -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- Ajoutez ici les autres éléments de la navbar -->
+            </ul>
+        </div>
+    </nav>
+    <!-- Div en bas de l'écran (10% du bas) -->
+    <div class="row" style="height: 10vh;">
+        <div class="col-12">
+            <!-- Logo à gauche -->
+            <img src="chemin/vers/logo.png" alt="Logo" style="max-height: 100%;">
+            <!-- Liens vers les catégories -->
+            <ul>
+                <li><a href="#">Catégorie 1</a></li>
+                <li><a href="#">Catégorie 2</a></li>
+                <!-- Ajoutez ici les autres liens vers les catégories -->
+            </ul>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
