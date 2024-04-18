@@ -5,6 +5,21 @@
     <title>Validation-commande</title>
 </head>
 <body>
+<div class="container-fluid">
+    <!-- Inclure le fragment du header -->
+    <th:block th:replace="fragments :: header"></th:block>
 
+
+    <!-- Contenu spécifique de la page d'accueil -->
+    <div class="main-content">
+        <!-- Ajoutez votre contenu principal ici -->
+    </div>
+
+    <!-- Inclure le fragment du footer -->
+    <th:block th:replace="fragments :: footer"></th:block>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

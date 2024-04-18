@@ -9,6 +9,7 @@
 <body>
 <div class="container-fluid">
     <!-- Div en haut de la page (10% du haut) -->
+    <th:block th:fragment="header">
     <div class="top-div">
         <!-- Logo au centre en haut -->
         <div class="text-center">
@@ -36,7 +37,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link jova" aria-current="page" href="#">
+                    <a class="nav-itemjova" aria-current="page" href="#">
                         JOVA
                     </a>
                 </li>
@@ -64,10 +65,12 @@
             </ul>
         </div>
     </div>
+    </th:block>
     <!-- Div principal pour le contenu de la page -->
     <div class="main-content">
         <!-- Ajoutez votre contenu principal ici -->
     </div>
+    <th:block th:fragment="footer">
     <!-- Div en bas de l'écran (10% du bas) -->
     <div class="bottom-div">
         <!-- Texte "JOVA" au centre en bas -->
@@ -78,6 +81,7 @@
         <div class="bottom-div-item">A propos</div>
         <div class="bottom-div-item">Nous contacter</div>
     </div>
+    </th:block>
 </div>
 
 <script src="script.js"></script>

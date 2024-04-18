@@ -90,7 +90,7 @@ body {
     align-items: center;
 }
 
-.jova {
+.nav-itemjova {
     /* Vos caractéristiques CSS pour l'élément "JOVA" */
     font-family: 'Fjalla One', sans-serif;
     font-size: 5vh;
@@ -154,3 +154,14 @@ body {
 .nav-link.search-icon {
     margin-right: 20px; /* Espacement entre l'icône de recherche et les autres éléments */
 }
+@media(max-width:720px) {
+
+    .search-input {
+        display: none;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+}
+
