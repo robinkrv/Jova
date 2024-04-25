@@ -1,0 +1,174 @@
+/* Ajout des styles supplémentaires */
+
+/* Définition de la couleur pour les divs */
+.top-div {
+    background-color: #07C4C4;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Ajouté pour centrer horizontalement */
+    position: relative;
+}
+
+.navbar {
+    background-color: #FFEEB7; /* Couleur de fond de la navbar */
+    width: 90%; /* Largeur de la navbar */
+    margin-top: 14vh; /* Marge supérieure pour décaler la navbar vers le bas */
+    height: 8vh;
+    align-items: center;
+    position: relative; /* Ajout de position relative */
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Répartir les éléments sur toute la largeur */
+    list-style-type: none;
+    text-align: center;
+    margin: 0; /* Ajout de cette ligne */
+    padding: 0;
+    flex-grow: 1; /* Les éléments à l'intérieur vont prendre tout l'espace disponible */
+    padding-left:22px;
+}
+
+.nav-item {
+    margin-right: 20px; /* Espacement entre les éléments */
+    height: 100%;
+}
+
+.nav-link {
+    text-decoration: none; /* Supprimer les soulignements des liens */
+    color: #000000; /* Couleur du texte */
+    position: relative; /* Ajout de position relative */
+}
+
+.bottom-div {
+    background-color: #07C4C4;
+    height: 10vh;
+    display: flex;
+    position: absolute; /* Positionnement fixe en bas de la page */
+    align-items: center;
+    bottom: 0; /* Alignement au bas de la page */
+    width: 100%; /* Largeur maximale */
+}
+
+.main-content {
+    flex: 1; /* Utilise l'espace restant */
+}
+
+/* Style du logo */
+.top-div img {
+    width: auto;
+    height: auto;
+    max-height: 65%; /* Ajustez selon vos besoins */
+    max-width: 100%; /* Ajustez selon vos besoins */
+    position: absolute; /* Positionnement absolu à l'intérieur de top-div ou bottom-div */
+    top: 35%; /* Positionnement au centre vertical */
+    left: 50%; /* Positionnement au centre horizontal */
+    transform: translate(-50%, -50%); /* Centrage absolu */
+}
+
+.bottom-div-text {
+    text-align: left; /* Aligner le texte à gauche */
+    font-family: 'Fjalla One', sans-serif; /* Police de caractères */
+    font-size: 5vh; /* Taille de la police */
+    color: #ffffff; /* Couleur du texte (blanc) */
+    text-shadow: 2px 2px 4px #000000; /* Ombrage léger */
+    text-stroke: 1px #795548; /* Contour du texte (plus petit) */
+    -webkit-text-stroke: 1px #795548; /* Contour du texte (pour les navigateurs WebKit) */
+    margin-left: 6vw; /* Marge à gauche pour décaler le texte */
+}
+
+body {
+    background-image: url('https://zupimages.net/up/24/15/f6xz.jpg');
+    margin: 0;
+}
+
+/* Style des icônes */
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.nav-itemjova {
+    /* Vos caractéristiques CSS pour l'élément "JOVA" */
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 5vh;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #000000;
+    text-stroke: 1px #795548;
+    -webkit-text-stroke: 1px #795548;
+}
+
+.nav-link svg {
+    width: 8vh; /* Taille des icônes en hauteur */
+    height: 6vh; /* Taille des icônes en largeur */
+    fill: #8B4513; /* Couleur des icônes */
+    margin-top: 8px; /* Espacement avec le bord supérieur de la navbar */
+}
+
+/* Style des divs contenant le texte */
+.bottom-div-item {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 2vh; /* Taille de la police ajustable selon vos besoins */
+    color: #ffffff; /* Couleur du texte (blanc) */
+    text-shadow: 1px 1px 2px #000000; /* Ombrage léger */
+    margin-left: 10px; /* Marge à gauche pour l'espacement */
+    padding-right: 25px;
+}
+
+.bottom-div-text, .bottom-div-item {
+    width: 100%; /* Étendre la largeur à 100% */
+    text-align: center; /* Centrer le texte horizontalement */
+    box-sizing: border-box; /* Inclure la taille de la bordure et du rembourrage dans la largeur */
+}
+
+/* Ajoutez ceci à votre fichier CSS */
+
+/* Style du champ de recherche */
+
+/* Style du formulaire de recherche */
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Espacement avec l'icône de recherche */
+}
+
+.search-input {
+    border: none; /* Supprimer toutes les bordures */
+    border-bottom: 1px solid #ccc; /* Ajouter une bordure seulement en bas */
+    background-color: transparent; /* Fond transparent */
+    font-size: 16px; /* Taille de la police */
+    color: #000; /* Couleur du texte */
+    outline: none; /* Supprimer la bordure de focus */
+    width: 150px; /* Largeur du champ de recherche */
+}
+
+
+/* Ajustement de l'espacement entre le champ de recherche et l'icône de recherche */
+.search-icon .nav-link {
+    display: flex;
+    align-items: center;
+}
+
+/* Style de l'icône de recherche */
+.nav-link.search-icon {
+    margin-right: 20px; /* Espacement entre l'icône de recherche et les autres éléments */
+}
+.bi bi-person {
+    width: 8vh; /* Taille spécifique pour l'icône "person" */
+    height: 10vh; /* Taille spécifique pour l'icône "person" */
+}
+
+@media(max-width:720px) {
+
+    .search-input {
+        display: none;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+}
+  
+ 
