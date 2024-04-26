@@ -1,167 +1,250 @@
-/* Ajout des styles supplémentaires */
+/* styles.css */
 
-/* Définition de la couleur pour les divs */
-.top-div {
-    background-color: #07C4C4;
-    height: 15vh;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Ajouté pour centrer horizontalement */
-    position: relative;
-}
-
-.navbar {
-    background-color: #FFEEB7; /* Couleur de fond de la navbar */
-    width: 90%; /* Largeur de la navbar */
-    margin-top: 14vh; /* Marge supérieure pour décaler la navbar vers le bas */
-    height: 8vh;
-    align-items: center;
-    position: relative; /* Ajout de position relative */
-}
-
-.navbar-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Répartir les éléments sur toute la largeur */
-    list-style-type: none;
-    text-align: center;
-    margin: 0; /* Ajout de cette ligne */
+body, html {
+    margin: 0;
     padding: 0;
-    flex-grow: 1; /* Les éléments à l'intérieur vont prendre tout l'espace disponible */
-    padding-left:22px;
-}
-
-.nav-item {
-    margin-right: 20px; /* Espacement entre les éléments */
-    height: 100%;
-}
-
-.nav-link {
-    text-decoration: none; /* Supprimer les soulignements des liens */
-    color: #000000; /* Couleur du texte */
-    position: relative; /* Ajout de position relative */
-}
-
-.bottom-div {
-    background-color: #07C4C4;
-    height: 10vh;
-    display: flex;
-    position: absolute; /* Positionnement fixe en bas de la page */
-    align-items: center;
-    bottom: 0; /* Alignement au bas de la page */
-    width: 100%; /* Largeur maximale */
-}
-
-.main-content {
-    flex: 1; /* Utilise l'espace restant */
-}
-
-/* Style du logo */
-.top-div img {
-    width: auto;
-    height: auto;
-    max-height: 65%; /* Ajustez selon vos besoins */
-    max-width: 100%; /* Ajustez selon vos besoins */
-    position: absolute; /* Positionnement absolu à l'intérieur de top-div ou bottom-div */
-    top: 35%; /* Positionnement au centre vertical */
-    left: 50%; /* Positionnement au centre horizontal */
-    transform: translate(-50%, -50%); /* Centrage absolu */
-}
-
-.bottom-div-text {
-    text-align: left; /* Aligner le texte à gauche */
-    font-family: 'Fjalla One', sans-serif; /* Police de caractères */
-    font-size: 5vh; /* Taille de la police */
-    color: #ffffff; /* Couleur du texte (blanc) */
-    text-shadow: 2px 2px 4px #000000; /* Ombrage léger */
-    text-stroke: 1px #795548; /* Contour du texte (plus petit) */
-    -webkit-text-stroke: 1px #795548; /* Contour du texte (pour les navigateurs WebKit) */
-    margin-left: 6vw; /* Marge à gauche pour décaler le texte */
 }
 
 body {
     background-image: url('https://zupimages.net/up/24/15/f6xz.jpg');
-    margin: 0;
 }
 
-/* Style des icônes */
-.nav-item {
+header {
+    background-color: #07C4C4;
+    padding: 10px;
+    text-align: center;
+}
+
+.header-container img {
+    max-width: 100px; /* Assure que l'image ne dépasse pas la largeur du conteneur */
+    height: auto; /* Permet à l'image de conserver son ratio hauteur/largeur */
+}
+
+footer {
+    background-color: #07C4C4;
+    padding: 10px;
     display: flex;
+    align-items: center;
+    bottom: 0; /* Alignement au bas de la page */
+    width: 100%; /* Largeur maximale */
+    position: fixed;
+}
+
+
+nav {
+    background-color: #FFEEB7;
+    padding: 10px;
+    margin: -10px 50px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.navbar-left {
+    margin-right: 10px;
+}
+
+.navbar-center {
+    flex-grow: 1; /* Permet à la barre de navigation centrale de prendre autant d'espace que possible */
+    text-align: center; /* Centrer horizontalement le texte */
+    margin: 0 auto;
+}
+
+.logo-text {
+    font-family: 'Fjalla One', sans-serif; /* Utilisation de la police Fjalla One */
+    text-transform: uppercase; /* Conversion en majuscules */
+    color: #ffffff; /* Couleur du texte en blanc */
+    -webkit-text-stroke: 1px #795548;
+    text-shadow: 2px 2px 4px #000000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 40px;
+    text-decoration: none; /* Enlève la décoration de lien */
+}
+
+.navbar-left,
+.navbar-center,
+.navbar-right {
+    display: flex; /* Ajouter l'affichage flex pour aligner les éléments horizontalement */
+    align-items: center; /* Aligner les éléments verticalement au centre */
+}
+.navbar-right {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.navbar-right img {
+    margin-right: 40px; /* Ajoute une marge droite de 10px entre chaque icône */
+}
+
+.navbar-left,
+.navbar-right {
+    margin-right: 10px;
+    list-style-type: none;
+}
+
+.navbar-left input[type="text"] {
+    margin-right: 15px; /* Espacement entre le champ de recherche et l'icône */
+}
+
+.navbar-left .search-container {
+    display: inline-flex; /* Affiche les éléments de manière linéaire */
     align-items: center;
 }
 
-.nav-itemjova {
-    /* Vos caractéristiques CSS pour l'élément "JOVA" */
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 5vh;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px #000000;
-    text-stroke: 1px #795548;
-    -webkit-text-stroke: 1px #795548;
+.search-container {
+    align-items: center;
+    margin-right: 15px; /* Espacement entre le champ de recherche et l'icône */
 }
 
-.nav-link svg {
-    width: 6vh; /* Taille des icônes en hauteur */
-    height: 6vh; /* Taille des icônes en largeur */
-    fill: #8B4513; /* Couleur des icônes */
-    margin-top: 8px; /* Espacement avec le bord supérieur de la navbar */
-}
-/* Style des divs contenant le texte */
-.bottom-div-item {
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 2vh; /* Taille de la police ajustable selon vos besoins */
-    color: #ffffff; /* Couleur du texte (blanc) */
-    text-shadow: 1px 1px 2px #000000; /* Ombrage léger */
-    margin-left: 10px; /* Marge à gauche pour l'espacement */
-    padding-right: 25px;
+.navbar-left img,
+.navbar-right img {
+   width: 35px; /* Définir la largeur de l'icône */
+    height: 35px; /* Définir la hauteur de l'icône */
 }
 
-.bottom-div-text, .bottom-div-item {
+.navbar-center a {
+margin: auto;
+}
+.menu-icon {
+    margin-left: 35px;
+    margin-right: 55px; /* Ajoute une marge de 10px à gauche et à droite */
+}
+
+/* Nouveau style pour le menu déroulant */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Afficher le menu déroulant lorsque survolé */
+.navbar-left:hover #menu-dropdown {
+    display: block;
+}
+
+.navbar-right:hover #profile-dropdown {
+    display: block;
+}
+
+main {
+    padding: 20px;
+}
+
+.footer-text .footer-item {
     width: 100%; /* Étendre la largeur à 100% */
     text-align: center; /* Centrer le texte horizontalement */
     box-sizing: border-box; /* Inclure la taille de la bordure et du rembourrage dans la largeur */
 }
 
-/* Ajoutez ceci à votre fichier CSS */
-
-/* Style du champ de recherche */
-
-/* Style du formulaire de recherche */
-.search-form {
-    display: flex;
-    align-items: center;
-    margin-right: 10px; /* Espacement avec l'icône de recherche */
+.footer-text {
+    font-family: 'Fjalla One', sans-serif; /* Police de caractères */
+    font-size: 40px; /* Taille de la police */
+    color: #ffffff; /* Couleur du texte (blanc) */
+    text-shadow: 2px 2px 4px #000000; /* Ombrage léger */
+    -webkit-text-stroke: 1px #795548; /* Contour du texte (pour les navigateurs WebKit) */
+    margin-left: 46px; /* Marge à gauche pour décaler le texte */
 }
 
-.search-input {
-    border: none; /* Supprimer toutes les bordures */
-    border-bottom: 1px solid #ccc; /* Ajouter une bordure seulement en bas */
-    background-color: transparent; /* Fond transparent */
-    font-size: 16px; /* Taille de la police */
-    color: #000; /* Couleur du texte */
-    outline: none; /* Supprimer la bordure de focus */
-    width: 150px; /* Largeur du champ de recherche */
+.footer-item {
+    width: 100%;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 16px; /* Taille de la police ajustable selon vos besoins */
+    color: #ffffff; /* Couleur du texte (blanc) */
+    text-shadow: 1px 1px 2px #000000; /* Ombrage léger */
+    margin-left: 10px; /* Marge à gauche pour l'espacement */
+    padding-right: 25px;
+    text-align: center;
 }
 
-
-/* Ajustement de l'espacement entre le champ de recherche et l'icône de recherche */
-.search-icon .nav-link {
-    display: flex;
-    align-items: center;
+@media only screen and (max-width: 868px) {
+    nav img {
+        width: 30px;
+        height: 30px;
+    }
+    .menu-icon {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .navbar-left input[type="text"] {
+        margin-right: 5px; /* Espacement entre le champ de recherche et l'icône */
+    }
+    .navbar-right img {
+        margin-right: 25px; /* Ajoute une marge droite de 10px entre chaque icône */
+    }
 }
 
-/* Style de l'icône de recherche */
-.nav-link.search-icon {
-    margin-right: 20px; /* Espacement entre l'icône de recherche et les autres éléments */
-}
-@media(max-width:720px) {
-
-    .search-input {
-        display: none;
+@media only screen and (max-width: 600px) {
+    nav {
+        flex-direction: column; /* Afficher les éléments de la navigation en colonne */
+        align-items: center; /* Centrer les éléments horizontalement */
+        margin: -10px 20px 0;
     }
 
-    .navbar {
-        width: 100%;
+    .navbar-left,
+    .navbar-center,
+    .navbar-right {
+        margin: 10px 0; /* Ajouter de l'espace entre les éléments */
+    }
+    .navbar-left img,
+    .navbar-right img {
+        width: 20px; /* Définir la largeur de l'icône */
+        height: 20px; /* Définir la hauteur de l'icône */
+    }
+    .logo-text {
+        font-size: 30px;
+    }
+
+    footer {
+        flex-direction: column; /* Afficher les éléments du footer en colonne */
+        align-items: center; /* Centrer les éléments horizontalement */
+    }
+
+    .footer-text {
+        margin: 0;
+    }
+
+    @media only screen and (max-width: 280px) {
+
+        nav {
+            flex-direction: column; /* Afficher les éléments de la navigation en colonne */
+            align-items: center; /* Centrer les éléments horizontalement */
+            margin: -10px 20px 0;
+        }
+        .navbar-left,
+        .navbar-center,
+        .navbar-right {
+            margin: 5px 0; /* Ajouter de l'espace entre les éléments */
+        }
+        .navbar-left img,
+        .navbar-right img {
+            width: 10px; /* Définir la largeur de l'icône */
+            height: 10px; /* Définir la hauteur de l'icône */
+        }
+        .navbar-left input[type="text"] {
+            width: 10ch;
+            margin-right: 15px; /* Espacement entre le champ de recherche et l'icône */
+        }
+        .logo-text {
+            font-size: 20px;
+        }
     }
 }
 
