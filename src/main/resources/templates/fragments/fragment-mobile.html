@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titre de la page</title>
     <link rel="stylesheet" href="/static/styles.css"> <!-- Assurez-vous d'avoir un fichier styles.css pour vos styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> <!-- Assurez-vous d'avoir un fichier styles.css pour vos styles -->
+
 </head>
 <body>
 <header>
@@ -40,16 +42,145 @@
             <a href="/creer-compte">Créer un compte</a>
             <a href="/administrateur">Administrateur</a>
         </div>
-        <a href="#"><img src="https://zupimages.net/up/24/17/ko29.png" alt="Panier"></a>
+        <a href="#" class="bag-icon"><img src="https://zupimages.net/up/24/17/ko29.png" alt="Panier"></a>
         <a href="#"><img src="https://zupimages.net/up/24/17/cx7s.png" alt="Téléphone"></a>
     </div>
 </nav>
 
 <main>
     <!-- Contenu de la page -->
+
+    <div class="container">
+
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://zupimages.net/up/24/17/mhl5.png" class="d-block w-100" alt="Qualité">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Qualité</h5>
+                        <p>Nous priorisons la qualité exceptionnelle de nos grains de café et nos fèves de cacao, et privilègions le processus de fabrication artisanal pour garantir un produit final irréprochable.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://zupimages.net/up/24/17/v904.jpg" class="d-block w-100" alt="Durabilité">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Durabilité</h5>
+                        <p>Des pratiques éthiques et durables tout au long de la chaîne d'approvisionnement, en soutenant les producteurs locaux, en utilisant des emballages écologiques et en adoptant des pratiques respectueuses de l'environnement</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://zupimages.net/up/24/17/3a6b.jpg" class="d-block w-100" alt="Plaisir">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Plaisir</h5>
+                        <p>Découvrez l'expérience sensorielle unique que procurent le café fraîchement torréfié et les chocolats artisanaux, leurs saveurs et arômes riches complexes, grâce à nos recettes traditionnelles et authentiques.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+        <div class="divCard">
+
+            <div class="card" style="width: 18rem;">
+                <img src="https://zupimages.net/up/24/17/10wb.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Café Super Nespresso en grains biologique</h5>
+                    <p class="card-text">Un excellent café à l'arome exceptionnel</p>
+                    <p>19,99€</p>
+                    <a href="#" class="btn btn-primary text-center">Ajouter au Panier</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="https://zupimages.net/up/24/17/3ci2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Boîte Chocolats Prestige Grands Crus</h5>
+                    <p class="card-text">Un florilège de chocolats tous plus savoureux les uns que les autres</p>
+                    <p>25€</p>
+                    <a href="#" class="btn btn-primary">Ajouter au panier</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="https://zupimages.net/up/24/17/ik4p.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Arabica 100% en grains</h5>
+                    <p class="card-text">Café récolté avec soin sur les versants du mont Jova</p>
+                    <p>14,99</p>
+                    <a href="#" class="btn btn-primary">Ajouter au Panier</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="https://zupimages.net/up/24/17/3lhf.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Mug Jova</h5>
+                    <p class="card-text">Mug frappé du sceau de Jova, pour déguster nos produits !</p>
+                    <p class="text-end">5,99</p>
+                    <a href="#" class="btn btn-primary">Ajouter au Panier</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="https://zupimages.net/up/24/17/abxv.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Oeufs de Pâques chocolat au lait</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Ajouter au Panier</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Ajouter au Panier</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Ajouter au Panier</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Ajouter au Panier</a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
 </main>
 
-<footer>
+<footer class="fixed-footer">
     <a href="/index" class="footer-text">JOVA</a>
     <a href="/catalogue-cafes" class="footer-item">Cafés</a>
     <a href="/catalogue-chocolats" class="footer-item">Chocolats</a>
@@ -57,6 +188,18 @@
     <a href="/a-propos" class="footer-item">A propos</a>
     <a href="/contact" class="footer-item">Nous contacter</a>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const myCarouselElement = document.querySelector('#carouselExampleCaptions');
+        const carousel = new bootstrap.Carousel(myCarouselElement, {
+            interval: 5000,
+            touch: true,
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

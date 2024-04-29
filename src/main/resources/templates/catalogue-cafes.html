@@ -10,9 +10,21 @@
     <th:block th:replace="fragments :: header"></th:block>
 
 
-    <!-- Contenu spécifique de la page d'accueil -->
     <div class="main-content">
-        <!-- Ajoutez votre contenu principal ici -->
+
+        <div class="divCard">
+            <div class="card" th:each="produit : ${produits}">
+                <div th:if="${produit.type == 'cafe'}">
+                    <img th:src="${produit.image}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${produit.nom}">Nom du produit</h5>
+                        <p class="card-text" th:text="${produit.prix}">Prix du produit</p>
+                        <a href="#" class="btn btn-primary">Ajouter au Panier</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- Inclure le fragment du footer -->

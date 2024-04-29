@@ -23,11 +23,12 @@ header {
 footer {
     background-color: #07C4C4;
     padding: 10px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
-    bottom: 0; /* Alignement au bas de la page */
     width: 100%; /* Largeur maximale */
-    position: fixed;
+    /*position: fixed;
+    bottom: 0;*/
 }
 
 
@@ -45,7 +46,7 @@ nav {
 }
 
 .navbar-center {
-    flex-grow: 1; /* Permet à la barre de navigation centrale de prendre autant d'espace que possible */
+    /*flex-grow: 1; /* Permet à la barre de navigation centrale de prendre autant d'espace que possible */
     text-align: center; /* Centrer horizontalement le texte */
     margin: 0 auto;
 }
@@ -136,16 +137,24 @@ margin: auto;
 }
 
 /* Afficher le menu déroulant lorsque survolé */
-.navbar-left:hover #menu-dropdown {
+#profile-icon:hover + #profile-dropdown,
+#profile-dropdown:hover {
     display: block;
 }
 
-.navbar-right:hover #profile-dropdown {
+#profile-icon:hover + #profile-dropdown {
     display: block;
 }
+
+
 
 main {
     padding: 20px;
+}
+
+.carousel {
+    margin-bottom: 50px;
+    margin-top: 30px;
 }
 
 .footer-text .footer-item {
@@ -174,6 +183,75 @@ main {
     text-align: center;
 }
 
+
+.divCard{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.card-body {
+    background-color: #FEF3C3;
+}
+
+.card-title {
+    height: 46px;
+}
+
+.card a {
+    margin-left: 70px;
+    background-color: #07C4C4;
+}
+
+.divCard img {
+    height: 300px;
+    padding: 10px;
+    background-color: #FEF3C3;
+}
+.divCard2 {
+    display: flex;
+    flex-direction: column; /* Afficher les cartes en colonne */
+    /*align-items: flex-start; /* Aligner les cartes à gauche */
+    margin-left: 25px; /* Marge à gauche pour l'ensemble des cartes */
+    margin-top: 32px; /* Ajouter une marge en haut */
+}
+
+.card2 {
+    /*width: 1000px; /* Largeur de 500 pixels */
+    height: 800px; /* Hauteur de 300 pixels */
+    background-color: #FEF3C3; /* Couleur de fond */
+    padding: 50px; /* Ajoute un espace intérieur de 20 pixels */
+   /*margin-bottom: 1000px;*/
+}
+
+.bag-icon img {
+    border: 1px solid red;
+}
+.divCard3 h5 {
+    color: #8B4513; /* Couleur de police du titre h5 */
+}
+
+.divCard3 img {
+    width: 60px; /* Largeur de l'image */
+    height: 60px; /* Hauteur de l'image */
+    display: block; /* Permet de centrer l'image */
+    margin: 0 auto; /* Aligne l'image au centre horizontalement */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn2 {
+    margin-right: 15px;
+}
+.divCard2 h5 {
+    margin-top: 15px;
+}
+
+.carousel-inner img {
+    padding: 40px
+}
+
 @media only screen and (max-width: 868px) {
     nav img {
         width: 30px;
@@ -189,17 +267,21 @@ main {
     .navbar-right img {
         margin-right: 25px; /* Ajoute une marge droite de 10px entre chaque icône */
     }
+    .search-container input {
+        width: 20ch;
+    }
 }
 
 @media only screen and (max-width: 600px) {
     nav {
-        flex-direction: column; /* Afficher les éléments de la navigation en colonne */
+        /*flex-direction: column; /* Afficher les éléments de la navigation en colonne */
         align-items: center; /* Centrer les éléments horizontalement */
         margin: -10px 20px 0;
     }
-
+    .navbar-center {
+        display: none;
+    }
     .navbar-left,
-    .navbar-center,
     .navbar-right {
         margin: 10px 0; /* Ajouter de l'espace entre les éléments */
     }
@@ -210,6 +292,10 @@ main {
     }
     .logo-text {
         font-size: 30px;
+    }
+
+    .search-container input {
+        width: 15ch;
     }
 
     footer {
@@ -224,27 +310,29 @@ main {
     @media only screen and (max-width: 280px) {
 
         nav {
-            flex-direction: column; /* Afficher les éléments de la navigation en colonne */
-            align-items: center; /* Centrer les éléments horizontalement */
+            flex-direction: column;
+            align-items: center;
             margin: -10px 20px 0;
         }
         .navbar-left,
         .navbar-center,
         .navbar-right {
-            margin: 5px 0; /* Ajouter de l'espace entre les éléments */
+            margin: 5px 0;
         }
         .navbar-left img,
         .navbar-right img {
-            width: 10px; /* Définir la largeur de l'icône */
-            height: 10px; /* Définir la hauteur de l'icône */
+            width: 10px;
+            height: 10px;
         }
         .navbar-left input[type="text"] {
             width: 10ch;
-            margin-right: 15px; /* Espacement entre le champ de recherche et l'icône */
+            margin-right: 15px;
         }
         .logo-text {
             font-size: 20px;
         }
     }
+
+
 }
 

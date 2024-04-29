@@ -2,24 +2,115 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Panier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titre de la page</title>
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Assurez-vous d'avoir un fichier styles.css pour vos styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> <!-- Assurez-vous d'avoir un fichier styles.css pour vos styles -->
+
 </head>
 <body>
-<div class="container-fluid">
-    <!-- Inclure le fragment du header -->
-    <th:block th:replace="fragments :: header"></th:block>
+<header>
+    <div class="header-container">
+        <img src="https://zupimages.net/up/24/15/zisc.png" alt="Logo">
+    </div>
+</header>
+
+<nav>
+    <div class="navbar-left">
+        <a href="#" id="menu-icon"><img src="https://zupimages.net/up/24/17/rsd6.png" alt="Menu" class="menu-icon"></a>
+        <!-- Menu déroulant pour le menu hamburger -->
+        <div id="menu-dropdown" class="dropdown-content">
+            <a href="/catalogue-cafes">Cafés</a>
+            <a href="/catalogue-chocolats">Chocolats</a>
+            <a href="/goodies">Goodies</a>
+            <a href="/a-propos">A propos</a>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Recherche...">
+            <a href="#"><img src="https://zupimages.net/up/24/17/ypcq.png" alt="Recherche"></a>
+        </div>
+    </div>
+    <div class="navbar-center">
+        <a href="#" class="logo-text">JOVA</a>
+    </div>
+    <div class="navbar-right">
+        <a href="#" id="profile-icon"><img src="https://zupimages.net/up/24/17/lle3.png" alt="Profil"></a>
+        <!-- Menu déroulant pour l'icône du profil -->
+        <div id="profile-dropdown" class="dropdown-content">
+            <a href="/connexion">Connexion</a>
+            <a href="/mon-compte">Mon compte</a>
+            <a href="/creer-compte">Créer un compte</a>
+            <a href="/administrateur">Administrateur</a>
+        </div>
+        <a href="#"><img src="https://zupimages.net/up/24/17/ko29.png" alt="Panier"></a>
+        <a href="#"><img src="https://zupimages.net/up/24/17/cx7s.png" alt="Téléphone"></a>
+    </div>
+</nav>
+
+<main>
+    <!-- Contenu de la page -->
+
+    <div class="container">
 
 
-    <!-- Contenu spécifique de la page d'accueil -->
-    <div class="main-content">
-        <!-- Ajoutez votre contenu principal ici -->
+        <div class="divCard2">
+
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="https://zupimages.net/up/24/17/10wb.jpg" class="img-fluid rounded-start" alt="caf">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Café Super Nespresso en grains biologique</h5>
+                            <p class="card-text">19,99€</p>
+                            <p class="card-text">Quantité : 1<small class="text-body-secondary"></small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="https://zupimages.net/up/24/17/3lhf.png" class="img-fluid rounded-start" alt="mug">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Mug Jova</h5>
+                            <p class="card-text">5,99€</p>
+                            <p class="card-text">Quantité : 1<small class="text-body-secondary"></small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="divCard">
+            <div class="card2" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Recapitulatif</h5>
+                    <p class="card-text text-center">Total : 25,98€</p>
+                    <a href="#" class="btn btn-primary text-end">Commander</a>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
 
-    <!-- Inclure le fragment du footer -->
-    <th:block th:replace="fragments :: footer"></th:block>
+</main>
 
-</div>
+<footer class="fixed-footer">
+    <a href="/index" class="footer-text">JOVA</a>
+    <a href="/catalogue-cafes" class="footer-item">Cafés</a>
+    <a href="/catalogue-chocolats" class="footer-item">Chocolats</a>
+    <a href="/goodies" class="footer-item">Goodies</a>
+    <a href="/a-propos" class="footer-item">A propos</a>
+    <a href="/contact" class="footer-item">Nous contacter</a>
+</footer>
 
-<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/admin/produit/modifier}" method="post">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+    <input type="hidden" th:name="produitId" th:value="${produit.id}" />
+
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" th:value="${produit.nom}" />
+
+    <label for="prix">Prix :</label>
+    <input type="text" id="prix" name="prix" th:value="${produit.prix}" />
+
+    <label for="description">Description :</label>
+    <textarea id="description" name="description" th:text="${produit.description}"></textarea>
+
+    <label for="type">Type :</label>
+    <input type="text" id="type" name="type" th:value="${produit.type}" />
+
+    <label for="poids">Poids :</label>
+    <input type="text" id="poids" name="poids" th:value="${produit.poids}" />
+
+    <button type="submit">Modifier</button>
+</form>
+<script>
+    function autocomplete(input, produits) {
+        input.addEventListener("input", function() {
+            let searchValue = input.value.toLowerCase();
+            let suggestions = [];
+            for (let produit of produits) {
+                if (produit.nom.toLowerCase().includes(searchValue)) {
+                    suggestions.push(produit.nom);
+                }
+            }
+            displaySuggestions(suggestions);
+        });
+    }
+
+    function displaySuggestions(suggestions) {
+        let suggestionList = document.getElementById("suggestion-list");
+        suggestionList.innerHTML = "";
+        for (let suggestion of suggestions) {
+            let listItem = document.createElement("li");
+            listItem.textContent = suggestion;
+            suggestionList.appendChild(listItem);
+        }
+    }
+</script>
+</body>
+</html>
