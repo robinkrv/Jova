@@ -18,6 +18,7 @@ header {
 .header-container img {
     max-width: 100px; /* Assure que l'image ne dépasse pas la largeur du conteneur */
     height: auto; /* Permet à l'image de conserver son ratio hauteur/largeur */
+    margin-top: -10px;
 }
 
 footer {
@@ -101,6 +102,20 @@ nav {
     margin-right: 15px; /* Espacement entre le champ de recherche et l'icône */
 }
 
+.result-text {
+    color: white;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+
+.no-result {
+    margin-top: 20px;
+    margin-bottom: 400px;
+    color: white;
+}
 .navbar-left img,
 .navbar-right img {
    width: 35px; /* Définir la largeur de l'icône */
@@ -142,7 +157,9 @@ margin: auto;
     display: block;
 }
 
-#profile-icon:hover + #profile-dropdown {
+
+#menu-icon:hover + #menu-dropdown,
+#menu-dropdown:hover {
     display: block;
 }
 
@@ -183,12 +200,27 @@ main {
     text-align: center;
 }
 
+.breadcrumb-container {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.breadcrumb-container li a {
+    color: white;
+}
+.breadcrumb-container nav {
+    background: transparent; /* Retire le fond */
+}
+
+
 
 .divCard{
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
     justify-content: center;
+    margin-bottom: 25px;
+    margin-top: 10px;
 }
 
 .card-body {
@@ -199,10 +231,17 @@ main {
     height: 46px;
 }
 
-.card a {
-    margin-left: 70px;
-    background-color: #07C4C4;
+.card-text-container {
+    font-size: 16px; /* Taille de police */
+    margin-bottom: 10px; /* Espacement entre les blocs */
 }
+
+.card button {
+    background-color: #07C4C4;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
 
 .divCard img {
     height: 300px;
@@ -225,9 +264,6 @@ main {
    /*margin-bottom: 1000px;*/
 }
 
-.bag-icon img {
-    border: 1px solid red;
-}
 .divCard3 h5 {
     color: #8B4513; /* Couleur de police du titre h5 */
 }
@@ -247,10 +283,25 @@ main {
 .divCard2 h5 {
     margin-top: 15px;
 }
-
+.carousel {
+    margin-top: -15px;
+}
 .carousel-inner img {
     padding: 40px
 }
+
+.carousel-item img {
+    height: 650px; /* ou toute autre hauteur souhaitée */
+}
+
+.produitPhares {
+        font-family: 'Atma', sans-serif;
+        font-size: 70px;
+        text-align: center;
+        margin-top: -20px;
+        margin-bottom: 25px;
+        color: #F0F0F0;
+    }
 
 @media only screen and (max-width: 868px) {
     nav img {

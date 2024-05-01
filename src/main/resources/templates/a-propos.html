@@ -11,6 +11,37 @@
     <!-- Inclure le fragment du header -->
     <div th:replace="~{fragments/header :: header}"></div>
 </div>
+<nav>
+    <div class="navbar-left">
+        <a href="#" id="menu-icon"><img src="https://zupimages.net/up/24/17/rsd6.png" alt="Menu" class="menu-icon"></a>
+        <!-- Menu déroulant pour le menu hamburger -->
+        <div id="menu-dropdown" class="dropdown-content">
+            <a href="/catalogue-cafes">Cafés</a>
+            <a href="/catalogue-chocolats">Chocolats</a>
+            <a href="/goodies">Goodies</a>
+            <a href="/a-propos">A propos</a>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Recherche...">
+            <a href="#"><img src="https://zupimages.net/up/24/17/ypcq.png" alt="Recherche"></a>
+        </div>
+    </div>
+    <div class="navbar-center">
+        <a href="/" class="logo-text">JOVA</a>
+    </div>
+    <div class="navbar-right">
+        <a href="#" id="profile-icon"><img src="https://zupimages.net/up/24/17/lle3.png" alt="Profil"></a>
+        <!-- Menu déroulant pour l'icône du profil -->
+        <div id="profile-dropdown" class="dropdown-content">
+            <a href="/connexion">Connexion</a>
+            <a href="/compte-client">Mon compte</a>
+            <a href="/creer-compte">Créer un compte</a>
+            <a href="/admin">Administrateur</a>
+        </div>
+        <a href="/panier" class="bag-icon"><img src="https://zupimages.net/up/24/17/ko29.png" alt="Panier"></a>
+        <a href="/contact"><img src="https://zupimages.net/up/24/17/cx7s.png" alt="Téléphone"></a>
+    </div>
+</nav>
 
 <!-- Contenu spécifique de la page d'accueil -->
 <div class="main-content">

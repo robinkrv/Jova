@@ -7,7 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class ProduitsController {
@@ -35,8 +38,11 @@ public class ProduitsController {
 
     @GetMapping("/goodies")
     public String showGoodiesPage(Model model) {
-        List<Produit> produitsGoodies = produitService.getProduitsByType("goodie");
+        List<Produit> produitsGoodies = produitService.getProduitsByType("goodies");
         model.addAttribute("produitsGoodies", produitsGoodies);
         return "goodies"; // Assuming you have a Thymeleaf template named "goodies.html"
     }
+
+
+
 }

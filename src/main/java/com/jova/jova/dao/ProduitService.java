@@ -41,6 +41,7 @@ public class ProduitService {
             existingProduit.setDescription(updatedProduit.getDescription());
             existingProduit.setType(updatedProduit.getType());
             existingProduit.setPoids(updatedProduit.getPoids());
+            existingProduit.setImageUrl(updatedProduit.getImageUrl());
             // Enregistrer les modifications dans la base de données
             return produitRepository.save(existingProduit);
         } else {
@@ -48,6 +49,12 @@ public class ProduitService {
             // Dans cet exemple, je renvoie null, mais tu peux choisir de lever une exception ou de retourner un résultat différent
             return null;
         }
+    }
+
+    public List<Produit> rechercherProduits(String recherche) {
+        // Vous devez implémenter la logique de recherche ici, en utilisant le repository produitRepository
+        // Par exemple, vous pouvez utiliser une méthode findByNomContainingIgnoreCase pour rechercher des produits par leur nom
+        return produitRepository.findByNomContainingIgnoreCase(recherche);
     }
 
     public List<Produit> getProduitsByType(String type) {

@@ -34,8 +34,10 @@ public class Produit {
     private String type;
 
     @Column(name = "poids")
-    @NotNull
-    private BigDecimal poids;
+    private String poids;
+
+    @Column(name = "image_url")
+    private String imageUrl;
 
     @OneToMany(mappedBy = "produit", cascade = CascadeType.ALL)
     private List<ProduitsPanier> produitsPanier;
@@ -43,12 +45,13 @@ public class Produit {
     @OneToMany(mappedBy = "produit", cascade = CascadeType.ALL)
     private List<DetailsCommande> detailsCommande;
 
-    public Produit(String nom, BigDecimal prix, String description, String type, BigDecimal poids) {
+    public Produit(String nom, BigDecimal prix, String description, String type, String poids, String imageUrl) {
         this.nom = nom;
         this.prix = prix;
         this.description = description;
         this.type = type;
         this.poids = poids;
+        this.imageUrl = imageUrl;
     }
 
     public Produit() {
@@ -98,12 +101,20 @@ public class Produit {
         this.type = type;
     }
 
-    public BigDecimal getPoids() {
+    public String getPoids() {
         return poids;
     }
 
-    public void setPoids(BigDecimal poids) {
+    public void setPoids(String poids) {
         this.poids = poids;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public List<ProduitsPanier> getProduitsPanier() {

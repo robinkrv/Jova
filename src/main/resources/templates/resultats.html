@@ -44,46 +44,49 @@
         <a href="/contact"><img src="https://zupimages.net/up/24/17/cx7s.png" alt="Téléphone"></a>
     </div>
 </nav>
-
 <div class="main-content">
-
     <div class="breadcrumb-container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Accueil</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Goodies</li>
+                <li class="breadcrumb-item active" aria-current="page">Résultats</li>
             </ol>
         </nav>
     </div>
-
-    <div class="divCard">
-        <div th:each="goodies : ${produitsGoodies}" class="card" style="width: 16rem;">
-            <img th:src="${goodies.imageUrl}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title" th:text="${goodies.nom}">Nom du produit</h5>
-                <div class="card-text-container">
-                    <p class="card-text" th:text="${goodies.description}">Description du produit</p>
+    <div class="container">
+        <h1 class="result-text">Résultats de la recherche :</h1>
+        <div class="divCard">
+            <!-- Vérifier si aucun produit n'a été trouvé -->
+            <th:block th:if="${aucunProduitTrouve}">
+                <p class="no-result">Aucun produit ne correspond à votre recherche.</p>
+            </th:block>
+            <!-- Vérifier si des produits ont été trouvés -->
+            <th:block th:if="${not #lists.isEmpty(produitsResultats)}">
+                <!-- Boucle sur les produits correspondant à la recherche -->
+                <div class="card" style="width: 16rem;" th:each="produit : ${produitsResultats}">
+                    <img th:src="${produit.imageUrl}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${produit.nom}">Nom du produit</h5>
+                        <div class="card-text-container">
+                            <p class="card-text" th:text="${produit.description}">Description du produit</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p th:text="${produit.prix} + '€'">Prix</p>
+                            <p th:text="${produit.poids}">Poids</p>
+                        </div>
+                        <button class="btn btn-primary d-block mx-auto">Ajouter au Panier</button>
+                    </div>
                 </div>
-                <div class="d-flex justify-content-between">
-                    <p th:text="${goodies.prix} + '€'">Prix</p>
-                </div>
-                <p class="card-text">Quantité : <input type="number" value="1" min="1"></p>
-                <button class="btn btn-primary d-block mx-auto">Ajouter au Panier</button>
-            </div>
+                <!-- Fin de la boucle -->
+            </th:block>
         </div>
     </div>
-
 </div>
-</div>
-
-</div>
-
 <div>
-    <!-- Inclure le fragment du footer -->
+
     <div th:replace="~{fragments/footer :: footer}"></div>
 </div>
-</div>
+
 
 <script src="script.js"></script>
 </body>
-</html>
