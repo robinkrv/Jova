@@ -24,8 +24,6 @@ public class ProduitsPanier {
     @NotNull
     private int quantite;
 
-    // Constructeurs
-
     public ProduitsPanier() {
     }
 
@@ -34,8 +32,6 @@ public class ProduitsPanier {
         this.produit = produit;
         this.quantite = quantite;
     }
-
-    // Getters et Setters
 
 
     public Long getId() {

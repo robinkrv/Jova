@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
@@ -23,7 +22,7 @@ public class Produit {
 
     @Column(name = "prix")
     @NotNull
-    private BigDecimal prix;
+    private double prix;
 
     @Column(name = "description")
     @NotNull
@@ -45,7 +44,7 @@ public class Produit {
     @OneToMany(mappedBy = "produit", cascade = CascadeType.ALL)
     private List<DetailsCommande> detailsCommande;
 
-    public Produit(String nom, BigDecimal prix, String description, String type, String poids, String imageUrl) {
+    public Produit(String nom, double prix, String description, String type, String poids, String imageUrl) {
         this.nom = nom;
         this.prix = prix;
         this.description = description;
@@ -58,7 +57,6 @@ public class Produit {
 
     }
 
-    // Getters and setters
 
 
     public Long getId() {
@@ -77,11 +75,11 @@ public class Produit {
         this.nom = nom;
     }
 
-    public BigDecimal getPrix() {
+    public double getPrix() {
         return prix;
     }
 
-    public void setPrix(BigDecimal prix) {
+    public void setPrix(double prix) {
         this.prix = prix;
     }
 

@@ -2,23 +2,35 @@ package com.jova.jova.dao;
 
 import com.jova.jova.dao.impl.UtilisateurRepository;
 import com.jova.jova.entity.Utilisateur;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Service pour gérer les opérations liées aux utilisateurs.
+ */
 @Service
 public class UtilisateurService {
 
     private final UtilisateurRepository utilisateurRepository;
 
+    /**
+     * Constructeur pour l'injection de dépendances.
+     * @param utilisateurRepository Repository pour les opérations sur les utilisateurs.
+     */
     @Autowired
     public UtilisateurService(UtilisateurRepository utilisateurRepository) {
         this.utilisateurRepository = utilisateurRepository;
     }
 
-    // Inscription d'un nouvel utilisateur
+    /**
+     * Inscrire un nouvel utilisateur.
+     * @param utilisateur L'utilisateur à inscrire.
+     * @return L'utilisateur inscrit ou null s'il est déjà inscrit.
+     */
     public Utilisateur inscrireUtilisateur(Utilisateur utilisateur) {
         if (utilisateurRepository.existsByUsernameOrMail(utilisateur.getUsername(), utilisateur.getMail())) {
             System.out.println("Vous êtes déjà inscrits sur Jova");
@@ -28,43 +40,83 @@ public class UtilisateurService {
         }
     }
 
-    // Connexion d'un utilisateur existant
+    /**
+     * Connecter un utilisateur avec un nom d'utilisateur et un mot de passe.
+     * @param nomUtilisateur Le nom de l'utilisateur.
+     * @param motDePasse Le mot de passe de l'utilisateur.
+     * @return L'utilisateur connecté, s'il existe.
+     */
     public Optional<Utilisateur> connecterUtilisateur(String nomUtilisateur, String motDePasse) {
         return utilisateurRepository.findByUsernameAndPassword(nomUtilisateur, motDePasse);
     }
 
-    // Récupération des informations d'un utilisateur par son identifiant
+    /**
+     * Obtenir un utilisateur par son identifiant.
+     * @param idUtilisateur L'identifiant de l'utilisateur.
+     * @return L'utilisateur correspondant à l'identifiant.
+     */
     public Optional<Utilisateur> getUtilisateurById(Long idUtilisateur) {
         return utilisateurRepository.findById(idUtilisateur);
     }
 
-    // Mise à jour des informations d'un utilisateur
+    /**
+     * Mettre à jour les informations d'un utilisateur.
+     * @param utilisateur L'utilisateur à mettre à jour.
+     * @return L'utilisateur mis à jour ou null s'il n'existe pas.
+     */
     public Utilisateur mettreAJourUtilisateur(Utilisateur utilisateur) {
-        // Vérifier si l'utilisateur existe déjà
         if (utilisateurRepository.existsById(utilisateur.getId())) {
-            // Mettre à jour les informations de l'utilisateur dans la base de données
             return utilisateurRepository.save(utilisateur);
         } else {
-            // Gérer le cas où l'utilisateur n'existe pas
-            // Par exemple, lever une exception ou retourner un résultat indiquant que l'utilisateur n'existe pas
-            // Dans cet exemple, je renvoie null
             return null;
         }
     }
 
-    // Suppression d'un utilisateur
+    /**
+     * Supprimer un utilisateur par son identifiant.
+     * @param idUtilisateur L'identifiant de l'utilisateur à supprimer.
+     */
     public void supprimerUtilisateur(Long idUtilisateur) {
         utilisateurRepository.deleteById(idUtilisateur);
     }
 
-    // Vérification de l'existence d'un utilisateur
+    /**
+     * Vérifier si un utilisateur existe déjà par son nom d'utilisateur ou son adresse e-mail.
+     * @param nomUtilisateur Le nom de l'utilisateur.
+     * @param mail L'adresse e-mail de l'utilisateur.
+     * @return true si l'utilisateur existe, sinon false.
+     */
     public boolean existeUtilisateur(String nomUtilisateur, String mail) {
         return utilisateurRepository.existsByUsernameOrMail(nomUtilisateur, mail);
     }
 
-    // Récupération de tous les utilisateurs
+    /**
+     * Récupérer la liste de tous les utilisateurs.
+     * @return La liste de tous les utilisateurs.
+     */
     public List<Utilisateur> getAllUtilisateurs() {
         return utilisateurRepository.findAll();
     }
-}
+    /**
+     * Récupérer l'utilisateur connecté à partir de la session HTTP.
+     * @param session La session HTTP.
+     * @return L'utilisateur connecté, s'il existe, sinon null.
+     */
+    public Utilisateur getUtilisateurConnecte(HttpSession session) {
+        // Récupérer l'identifiant de l'utilisateur connecté à partir de la session
+        Long idUtilisateur = (Long) session.getAttribute("idUtilisateurConnecte");
+        if (idUtilisateur != null) {
+            // Si l'identifiant n'est pas null, rechercher l'utilisateur dans la base de données
+            return utilisateurRepository.findById(idUtilisateur).orElse(null);
+        }
+        return null; // Retourner null si aucun utilisateur n'est connecté
+    }
 
+    /**
+     * Déconnecter un utilisateur en supprimant l'attribut de session "utilisateurConnecte".
+     * @param session La session de l'utilisateur à déconnecter.
+     */
+    public void deconnecterUtilisateur(HttpSession session) {
+        session.removeAttribute("utilisateurConnecte");
+    }
+}

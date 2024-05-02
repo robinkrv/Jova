@@ -26,7 +26,6 @@ public class Commande {
     @Column(name = "numero_commande")
     private long numeroCommande;
 
-    // Constructeurs
     public Commande() {
     }
 
@@ -36,8 +35,6 @@ public class Commande {
         this.statut = statut;
         this.numeroCommande = numeroCommande;
     }
-
-    // Getters et setters
 
 
     public Long getId() {

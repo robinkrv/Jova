@@ -19,18 +19,21 @@ public class Panier {
     @Column(name = "date_creation")
     private Date dateCreationPanier;
 
-    @OneToMany(mappedBy = "panier", cascade = CascadeType.ALL)
+    @Transient // Pour ne pas être persisté en base de données
+    private double total;
+
+    @OneToMany(mappedBy = "panier", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<ProduitsPanier> produitsPanier;
 
-    // Constructeurs, getters et setters
 
     public Panier() {
     }
 
-    public Panier(Utilisateur utilisateur, Date dateCreationPanier, List<ProduitsPanier> produitsPanier) {
+    public Panier(Utilisateur utilisateur, Date dateCreationPanier, List<ProduitsPanier> produitsPanier, double total) {
         this.utilisateur = utilisateur;
         this.dateCreationPanier = dateCreationPanier;
         this.produitsPanier = produitsPanier;
+        this.total = total;
     }
 
     public Long getId() {
@@ -63,6 +66,14 @@ public class Panier {
 
     public void setProduitsPanier(List<ProduitsPanier> produitsPanier) {
         this.produitsPanier = produitsPanier;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
     }
 }
 

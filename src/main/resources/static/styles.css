@@ -16,8 +16,8 @@ header {
 }
 
 .header-container img {
-    max-width: 100px; /* Assure que l'image ne dépasse pas la largeur du conteneur */
-    height: auto; /* Permet à l'image de conserver son ratio hauteur/largeur */
+    max-width: 100px;
+    height: auto;
     margin-top: -10px;
 }
 
@@ -27,7 +27,7 @@ footer {
     margin-top: 20px;
     display: flex;
     align-items: center;
-    width: 100%; /* Largeur maximale */
+    width: 100%;
     /*position: fixed;
     bottom: 0;*/
 }
@@ -47,15 +47,15 @@ nav {
 }
 
 .navbar-center {
-    /*flex-grow: 1; /* Permet à la barre de navigation centrale de prendre autant d'espace que possible */
-    text-align: center; /* Centrer horizontalement le texte */
+    /*flex-grow: 1; */
+    text-align: center;
     margin: 0 auto;
 }
 
 .logo-text {
-    font-family: 'Fjalla One', sans-serif; /* Utilisation de la police Fjalla One */
-    text-transform: uppercase; /* Conversion en majuscules */
-    color: #ffffff; /* Couleur du texte en blanc */
+    font-family: 'Fjalla One', sans-serif;
+    text-transform: uppercase;
+    color: #ffffff;
     -webkit-text-stroke: 1px #795548;
     text-shadow: 2px 2px 4px #000000;
     position: absolute;
@@ -64,14 +64,14 @@ nav {
     transform: translate(-50%, -50%);
     margin: 0;
     font-size: 40px;
-    text-decoration: none; /* Enlève la décoration de lien */
+    text-decoration: none;
 }
 
 .navbar-left,
 .navbar-center,
 .navbar-right {
-    display: flex; /* Ajouter l'affichage flex pour aligner les éléments horizontalement */
-    align-items: center; /* Aligner les éléments verticalement au centre */
+    display: flex;
+    align-items: center;
 }
 .navbar-right {
     display: flex;
@@ -79,7 +79,7 @@ nav {
     flex-wrap: nowrap;
 }
 .navbar-right img {
-    margin-right: 40px; /* Ajoute une marge droite de 10px entre chaque icône */
+    margin-right: 40px;
 }
 
 .navbar-left,
@@ -89,17 +89,25 @@ nav {
 }
 
 .navbar-left input[type="text"] {
-    margin-right: 15px; /* Espacement entre le champ de recherche et l'icône */
+    margin-right: 15px;
 }
 
 .navbar-left .search-container {
-    display: inline-flex; /* Affiche les éléments de manière linéaire */
+    display: inline-flex;
     align-items: center;
 }
 
 .search-container {
     align-items: center;
-    margin-right: 15px; /* Espacement entre le champ de recherche et l'icône */
+    margin-right: 15px;
+}
+
+.search-container button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
 }
 
 .result-text {
@@ -111,6 +119,9 @@ nav {
     text-underline-offset: 2px;
 }
 
+.house {
+    display: none;
+}
 .no-result {
     margin-top: 20px;
     margin-bottom: 400px;
@@ -118,8 +129,8 @@ nav {
 }
 .navbar-left img,
 .navbar-right img {
-   width: 35px; /* Définir la largeur de l'icône */
-    height: 35px; /* Définir la hauteur de l'icône */
+   width: 35px;
+    height: 35px;
 }
 
 .navbar-center a {
@@ -127,10 +138,10 @@ margin: auto;
 }
 .menu-icon {
     margin-left: 35px;
-    margin-right: 55px; /* Ajoute une marge de 10px à gauche et à droite */
+    margin-right: 55px;
 }
 
-/* Nouveau style pour le menu déroulant */
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -151,7 +162,7 @@ margin: auto;
     background-color: #ddd;
 }
 
-/* Afficher le menu déroulant lorsque survolé */
+
 #profile-icon:hover + #profile-dropdown,
 #profile-dropdown:hover {
     display: block;
@@ -171,32 +182,35 @@ main {
 
 .carousel {
     margin-bottom: 50px;
-    margin-top: 30px;
+    margin-top: 35px;
 }
 
+.inscription-form {
+
+}
 .footer-text .footer-item {
-    width: 100%; /* Étendre la largeur à 100% */
-    text-align: center; /* Centrer le texte horizontalement */
-    box-sizing: border-box; /* Inclure la taille de la bordure et du rembourrage dans la largeur */
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .footer-text {
-    font-family: 'Fjalla One', sans-serif; /* Police de caractères */
-    font-size: 40px; /* Taille de la police */
-    color: #ffffff; /* Couleur du texte (blanc) */
-    text-shadow: 2px 2px 4px #000000; /* Ombrage léger */
-    -webkit-text-stroke: 1px #795548; /* Contour du texte (pour les navigateurs WebKit) */
-    margin-left: 46px; /* Marge à gauche pour décaler le texte */
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 40px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #000000;
+    -webkit-text-stroke: 1px #795548;
+    margin-left: 46px;
 }
 
 .footer-item {
     width: 100%;
     font-family: 'Fjalla One', sans-serif;
-    font-size: 16px; /* Taille de la police ajustable selon vos besoins */
-    color: #ffffff; /* Couleur du texte (blanc) */
-    text-shadow: 1px 1px 2px #000000; /* Ombrage léger */
-    margin-left: 10px; /* Marge à gauche pour l'espacement */
-    padding-right: 25px;
+    font-size: 16px;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000000; /
+    margin-left: 10px;
+    /*padding-right: 25px;*/
     text-align: center;
 }
 
@@ -209,7 +223,7 @@ main {
     color: white;
 }
 .breadcrumb-container nav {
-    background: transparent; /* Retire le fond */
+    background: transparent;
 }
 
 
@@ -232,8 +246,8 @@ main {
 }
 
 .card-text-container {
-    font-size: 16px; /* Taille de police */
-    margin-bottom: 10px; /* Espacement entre les blocs */
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
 .card button {
@@ -241,38 +255,169 @@ main {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
     border: none;
 }
+.card button button:hover {
+    background-color: #0056b3;
+}
 
+.inscription-form {
+    margin: 0 auto;
+    background-color: #FEF3C3;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+}
 
+.inscription-form h2 {
+    text-align: center;
+}
+
+.inscription-form form {
+    max-width: 100%;
+}
+
+.inscription-form .mb-3 {
+    margin-bottom: 15px;
+}
+
+.inscription-form .form-label {
+    display: block;
+    font-weight: bold;
+}
+
+.inscription-form .form-control {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.inscription-form button {
+    width: calc(100% - 40px);
+    margin: 10px auto;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #07C4C4;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+}
+.connect-form {
+    margin: 40px auto;
+    max-width: 400px;
+    background-color: #FEF3C3;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.hello {
+    text-align: right;
+    color: white;
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    position: absolute;
+    top: 20px;
+}
+.connect-form h5 {
+    margin-bottom: 20px;
+}
+
+.connect-form form {
+    max-width: 100%;
+}
+
+.connect-form .mb-3 {
+    margin-bottom: 15px;
+}
+
+.connect-form .form-label {
+    display: block;
+    font-weight: bold;
+}
+
+.connect-form .form-control {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.connect-form .form-check {
+    display: flex;
+    align-items: center;
+}
+
+.connect-form .form-check-input {
+    margin-right: 5px;
+}
+
+.connect-form button {
+    width: calc(100% - 40px);
+    margin: 10px auto;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #07C4C4;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+}
+
+.connect-form button:hover {
+    background-color: #05a9a9;
+}
+
+.inscription-form button:hover {
+    background-color: #0056b3;
+}
 .divCard img {
     height: 300px;
     padding: 10px;
     background-color: #FEF3C3;
 }
-.divCard2 {
-    display: flex;
-    flex-direction: column; /* Afficher les cartes en colonne */
-    /*align-items: flex-start; /* Aligner les cartes à gauche */
-    margin-left: 25px; /* Marge à gauche pour l'ensemble des cartes */
-    margin-top: 32px; /* Ajouter une marge en haut */
+.divPanier {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #FEF3C3;
 }
 
+.panier-card {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.divPanier .card {
+    border: 2px dashed #795548;
+    border-radius: 0;
+    margin-bottom: 20px;
+}
+
+.card-panier {
+    padding: 20px;
+}
+
+.totalCard {
+    margin-top:10px;
+}
 .card2 {
-    /*width: 1000px; /* Largeur de 500 pixels */
-    height: 800px; /* Hauteur de 300 pixels */
-    background-color: #FEF3C3; /* Couleur de fond */
-    padding: 50px; /* Ajoute un espace intérieur de 20 pixels */
-   /*margin-bottom: 1000px;*/
+    background-color: #FEF3C3;
+    padding: 20px;
 }
 
 .divCard3 h5 {
-    color: #8B4513; /* Couleur de police du titre h5 */
+    color: #8B4513;
 }
 
 .divCard3 img {
-    width: 60px; /* Largeur de l'image */
-    height: 60px; /* Hauteur de l'image */
-    display: block; /* Permet de centrer l'image */
-    margin: 0 auto; /* Aligne l'image au centre horizontalement */
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -291,7 +436,7 @@ main {
 }
 
 .carousel-item img {
-    height: 650px; /* ou toute autre hauteur souhaitée */
+    height: 650px;
 }
 
 .produitPhares {
@@ -303,7 +448,7 @@ main {
         color: #F0F0F0;
     }
 
-@media only screen and (max-width: 868px) {
+@media only screen and (max-width: 987px) {
     nav img {
         width: 30px;
         height: 30px;
@@ -313,20 +458,36 @@ main {
         margin-right: 5px;
     }
     .navbar-left input[type="text"] {
-        margin-right: 5px; /* Espacement entre le champ de recherche et l'icône */
+        margin-right: 5px;
     }
     .navbar-right img {
-        margin-right: 25px; /* Ajoute une marge droite de 10px entre chaque icône */
+        margin-right: 25px;
     }
     .search-container input {
         width: 20ch;
     }
-}
+    .produitPhares {
+        font-size: 30px;
+        margin-top: 10px;
 
-@media only screen and (max-width: 600px) {
+    }
+}
+@media (max-width: 768px) {
+    .carousel {
+        display: none;
+    }
+    .logo-text {
+        display: none;
+    }
+    .house {
+        display: inherit;
+    }
+
+}
+@media only screen and (max-width: 650px) {
     nav {
-        /*flex-direction: column; /* Afficher les éléments de la navigation en colonne */
-        align-items: center; /* Centrer les éléments horizontalement */
+
+        align-items: center;
         margin: -10px 20px 0;
     }
     .navbar-center {
@@ -334,12 +495,12 @@ main {
     }
     .navbar-left,
     .navbar-right {
-        margin: 10px 0; /* Ajouter de l'espace entre les éléments */
+        margin: 10px 0;
     }
     .navbar-left img,
     .navbar-right img {
-        width: 20px; /* Définir la largeur de l'icône */
-        height: 20px; /* Définir la hauteur de l'icône */
+        width: 30px;
+        height: 30px;
     }
     .logo-text {
         font-size: 30px;
@@ -350,15 +511,25 @@ main {
     }
 
     footer {
-        flex-direction: column; /* Afficher les éléments du footer en colonne */
-        align-items: center; /* Centrer les éléments horizontalement */
+        flex-direction: column;
+        align-items: center;
     }
 
     .footer-text {
         margin: 0;
     }
 
-    @media only screen and (max-width: 280px) {
+    @media (max-width:510px) {
+        .navbar-left img,
+        .navbar-right img {
+            width: 22px;
+            height: 22px;
+        }
+        .produitPhares {
+            font-size: 20px;
+        }
+    }
+    @media only screen and (max-width: 400px) {
 
         nav {
             flex-direction: column;
@@ -370,10 +541,8 @@ main {
         .navbar-right {
             margin: 5px 0;
         }
-        .navbar-left img,
-        .navbar-right img {
-            width: 10px;
-            height: 10px;
+        .menu-icon {
+            margin-right: 15px;
         }
         .navbar-left input[type="text"] {
             width: 10ch;
@@ -384,6 +553,13 @@ main {
         }
     }
 
-
+@media (max-width:364px) {
+    .card h5 {
+        font-size: 15px;
+    }
+    .produitPhares {
+        font-size: 12px;
+    }
+}
 }
 

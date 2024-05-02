@@ -7,30 +7,55 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Service pour gérer les opérations liées aux produits.
+ */
 @Service
 public class ProduitService {
 
     private final ProduitRepository produitRepository;
 
+    /**
+     * Constructeur pour l'injection de dépendances.
+     * @param produitRepository Repository pour les opérations sur les produits.
+     */
     @Autowired
     public ProduitService(ProduitRepository produitRepository) {
         this.produitRepository = produitRepository;
     }
 
+    /**
+     * Récupérer la liste de tous les produits.
+     * @return La liste de tous les produits.
+     */
     public List<Produit> getAllProduits() {
         return produitRepository.findAll();
     }
 
+    /**
+     * Récupérer un produit par son identifiant.
+     * @param produitId L'identifiant du produit à récupérer.
+     * @return Le produit correspondant à l'identifiant, s'il existe.
+     */
     public Optional<Produit> getProduitById(Long produitId) {
         return produitRepository.findById(produitId);
     }
 
-    // Méthode pour ajouter un nouveau produit
+    /**
+     * Ajouter un nouveau produit.
+     * @param produit Le produit à ajouter.
+     * @return Le produit ajouté.
+     */
     public Produit addProduit(Produit produit) {
         return produitRepository.save(produit);
     }
 
-    // Méthode pour mettre à jour un produit existant
+    /**
+     * Mettre à jour un produit existant.
+     * @param produitId L'identifiant du produit à mettre à jour.
+     * @param updatedProduit Le produit mis à jour.
+     * @return Le produit mis à jour.
+     */
     public Produit updateProduit(Long produitId, Produit updatedProduit) {
         Optional<Produit> existingProduitOptional = produitRepository.findById(produitId);
         if (existingProduitOptional.isPresent()) {
@@ -42,27 +67,35 @@ public class ProduitService {
             existingProduit.setType(updatedProduit.getType());
             existingProduit.setPoids(updatedProduit.getPoids());
             existingProduit.setImageUrl(updatedProduit.getImageUrl());
-            // Enregistrer les modifications dans la base de données
             return produitRepository.save(existingProduit);
         } else {
-            // Gérer le cas où le produit n'est pas trouvé
-            // Dans cet exemple, je renvoie null, mais tu peux choisir de lever une exception ou de retourner un résultat différent
             return null;
         }
     }
 
+    /**
+     * Rechercher des produits par un terme de recherche.
+     * @param recherche Le terme de recherche.
+     * @return La liste des produits correspondant à la recherche.
+     */
     public List<Produit> rechercherProduits(String recherche) {
-        // Vous devez implémenter la logique de recherche ici, en utilisant le repository produitRepository
-        // Par exemple, vous pouvez utiliser une méthode findByNomContainingIgnoreCase pour rechercher des produits par leur nom
         return produitRepository.findByNomContainingIgnoreCase(recherche);
     }
 
+    /**
+     * Récupérer la liste des produits par type.
+     * @param type Le type de produit.
+     * @return La liste des produits correspondant au type spécifié.
+     */
     public List<Produit> getProduitsByType(String type) {
         return produitRepository.findByType(type);
     }
-    // Méthode pour supprimer un produit
+
+    /**
+     * Supprimer un produit par son identifiant.
+     * @param produitId L'identifiant du produit à supprimer.
+     */
     public void deleteProduit(Long produitId) {
         produitRepository.deleteById(produitId);
     }
 }
-

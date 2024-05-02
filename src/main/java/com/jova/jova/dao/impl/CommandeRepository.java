@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CommandeRepository extends JpaRepository<Commande, Long> {
-    // Ajoutez des méthodes personnalisées si nécessaire
+    boolean existsByNumeroCommande(long numeroCommande);
 }
 

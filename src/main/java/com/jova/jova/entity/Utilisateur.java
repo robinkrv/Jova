@@ -46,7 +46,7 @@ public class Utilisateur {
 
     @Column(name = "password")
     @NotNull
-    @Size(min = 6, max = 25, message = "Le mot de passe doit comporter entre 6 et 25 caractères")
+    //@Size(min = 1, max = 200, message = "Le mot de passe doit comporter entre 6 et 50 caractères")
     private String password;
 
     @Column(name = "date_creation_compte")

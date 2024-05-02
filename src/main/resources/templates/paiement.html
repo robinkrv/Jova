@@ -53,47 +53,32 @@
     <div class="container">
 
 
-        <div class="divCard2">
-
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Choisir cette adresse de livraison ?</h5>
-                            <p class="card-text">1 Rue de la Paix </p>
-                            <a href="#" class="btn btn-primary text-end">Oui</a>
-                            <a href="#" class="btn btn-primary btn2">Modifier</a>
-                            <h5 class="card-title">Informations de paiement</h5>
-                            <p class="card-text">Numéro de carte : XXXX XXXX XXXX XXXX</p>
-                            <p class="card-text">Date d'expiration : 05/24</p>
-                            <p class="card-text">Cryptogramme : XXX</p>
-                            <a href="#" class="btn btn-primary text-end">Payer</a>
+        <div class="container">
+            <div class="divPaiement">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Votre adresse de livraison</h5>
+                                <!--<p class="card-text" th:text="${utilisateur.adresse}"></p> Adresse de livraison de l'utilisateur -->
+                                <a href="#" class="btn btn-primary btn2">Modifier</a>
+                                <h5 class="card-title">Informations de paiement</h5>
+                                <p class="card-text">Numéro de carte : XXXX XXXX XXXX XXXX</p>
+                                <p class="card-text">Date d'expiration : 05/24</p>
+                                <p class="card-text">Cryptogramme : XXX</p>
+                                <form action="/payer" method="post"> <!-- Formulaire pour déclencher le paiement -->
+                                    <button type="submit" class="btn btn-primary text-end">Payer</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">Mug Jova</h5>
-                            <p class="card-text">5,99€</p>
-                            <p class="card-text">Quantité : 1<small class="text-body-secondary"></small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
 
-        </div>
-        <div class="divCard">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Recapitulatif</h5>
-                    <p class="card-text text-center">Total : 25,98€</p>
-                    <a href="#" class="btn btn-primary text-end">Commander</a>
-                </div>
-            </div>
-        </div>
+
+
+    </div>
 
 
 
