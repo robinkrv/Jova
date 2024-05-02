@@ -107,12 +107,11 @@ public class PanierService {
         Panier panier = utilisateur.getPanier();
 
         if (panier != null) {
-            // Parcourir les produits dans le panier
             for (ProduitsPanier produitsPanier : panier.getProduitsPanier()) {
                 DetailsCommande detailsCommande = new DetailsCommande();
                 detailsCommande.setProduit(produitsPanier.getProduit());
                 detailsCommande.setQuantite(produitsPanier.getQuantite());
-                // Ajouter les détails de commande à la liste
+
                 detailsCommandeList.add(detailsCommande);
             }
         }
@@ -135,17 +134,16 @@ public class PanierService {
      * @param produit Le produit à supprimer.
      */
     public void removeProduitFromPanier(Panier panier, Produit produit) {
-        // Parcourir la liste des produits dans le panier de l'utilisateur
         for (ProduitsPanier produitsPanier : panier.getProduitsPanier()) {
-            // Vérifier si le produit correspond à celui que nous voulons supprimer
+
             if (produitsPanier.getProduit().equals(produit)) {
-                // Retirer le produit du panier de l'utilisateur
+
                 panier.getProduitsPanier().remove(produitsPanier);
-                break; // Sortir de la boucle une fois que le produit est trouvé et retiré
+                break;
             }
         }
 
-        // Enregistrer les modifications du panier dans la base de données
+
         panierRepository.save(panier);
     }
 
@@ -156,7 +154,7 @@ public class PanierService {
      */
     public void viderPanier(Utilisateur utilisateur) {
         Panier panier = utilisateur.getPanier();
-        panier.getProduitsPanier().clear(); // Supprimer tous les produits du panier
-        panierRepository.save(panier); // Enregistrer les modifications dans la base de données
+        panier.getProduitsPanier().clear();
+        panierRepository.save(panier);
     }
 }

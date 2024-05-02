@@ -6,7 +6,7 @@
     <title>Connexion</title>
     <link rel="stylesheet" href="/static/styles.css"> <!-- Assurez-vous d'avoir un fichier styles.css pour vos styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"> <!-- Assurez-vous d'avoir un fichier styles.css pour vos styles -->
-
+    <script src="/webjars/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
 <div>
@@ -45,16 +45,24 @@
         <a href="/contact"><img src="https://zupimages.net/up/24/17/cx7s.png" alt="Téléphone"></a>
     </div>
 </nav>
-<div th:if="${message}" class="alert alert-success" role="alert">
+<!--<div th:if="${message}" class="alert alert-success" role="alert">
     <p th:text="${message}"></p>
 </div>
 
 <div th:if="${message}" class="alert alert-danger" role="alert">
     <p th:text="${message}"></p>
+</div>-->
+<div class="breadcrumb-container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Connexion</li>
+        </ol>
+    </nav>
 </div>
 <div class="connect-form">
     <h5>Connexion</h5>
-    <form action="/connexion" method="post">
+    <form id="connexion-form" action="/connexion" method="post">
         <div class="mb-3">
             <label for="username" class="form-label">Nom d'utilisateur :</label>
             <input type="text" class="form-control" id="username" name="username" required>
@@ -127,14 +135,7 @@
     });
 
 
-    // Récupérer le message à afficher du modèle Thymeleaf
-    let message = "[[${message}]]";
 
-    // Vérifier si le message n'est pas vide
-    if (message.trim() !== "") {
-// Afficher le message dans une fenêtre pop-up
-        alert(message);
-    }
 </script>
 
 </body>

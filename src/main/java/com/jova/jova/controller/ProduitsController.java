@@ -26,7 +26,7 @@ public class ProduitsController {
     public String showCafesPage(Model model) {
         List<Produit> produitsCafes = produitService.getProduitsByType("cafe");
         model.addAttribute("produitsCafes", produitsCafes);
-        return "catalogue-cafes"; // Assuming you have a Thymeleaf template named "catalogue-cafes.html"
+        return "catalogue-cafes";
     }
 
     @GetMapping("/catalogue-chocolats")
@@ -40,7 +40,7 @@ public class ProduitsController {
     public String showGoodiesPage(Model model) {
         List<Produit> produitsGoodies = produitService.getProduitsByType("goodies");
         model.addAttribute("produitsGoodies", produitsGoodies);
-        return "goodies"; // Assuming you have a Thymeleaf template named "goodies.html"
+        return "goodies";
     }
 
 

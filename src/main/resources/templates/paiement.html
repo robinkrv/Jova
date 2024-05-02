@@ -48,37 +48,34 @@
 </nav>
 
 <main>
-    <!-- Contenu de la page -->
+    <div class="breadcrumb-container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="/panier">Panier</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Paiement</li>
+            </ol>
+        </nav>
+    </div>
 
     <div class="container">
 
 
-        <div class="container">
-            <div class="divPaiement">
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Votre adresse de livraison</h5>
-                                <!--<p class="card-text" th:text="${utilisateur.adresse}"></p> Adresse de livraison de l'utilisateur -->
-                                <a href="#" class="btn btn-primary btn2">Modifier</a>
-                                <h5 class="card-title">Informations de paiement</h5>
-                                <p class="card-text">Numéro de carte : XXXX XXXX XXXX XXXX</p>
-                                <p class="card-text">Date d'expiration : 05/24</p>
-                                <p class="card-text">Cryptogramme : XXX</p>
-                                <form action="/payer" method="post"> <!-- Formulaire pour déclencher le paiement -->
-                                    <button type="submit" class="btn btn-primary text-end">Payer</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="divPaiement" style="display: flex; justify-content: center;">
+            <div class="card" style="max-width: 540px; background-color: #FEF3C3; border-radius: 10px; padding: 20px;">
+                <h5 style="text-align: center;">Votre adresse de livraison :</h5>
+                <p>1 Rue de la Paix</p>
+                <button style="margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;" class="btn btn-primary">Modifier</button>
+                <h5 style="text-align: center;">Informations de paiement :</h5>
+                <p>Numéro de carte : XXXX XXXX XXXX XXXX</p>
+                <p>Date d'expiration : 05/24</p>
+                <p>Cryptogramme : XXX</p>
+                <form action="/payer" method="post" style="text-align: center;"> <!-- Formulaire pour déclencher le paiement -->
+                    <button type="submit" class="btn btn-primary">Payer</button>
+                </form>
             </div>
         </div>
 
-
-
-    </div>
 
 
 

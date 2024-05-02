@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
-
+/**
+ * Contrôleur gérant les opérations liées aux commandes.
+ */
 @Controller
 public class CommandesController {
 
@@ -27,6 +29,15 @@ public class CommandesController {
     private final PanierService panierService;
     private final CommandeRepository commandeRepository;
 
+    /**
+     * Constructeur du contrôleur des commandes.
+     *
+     * @param commandeService           Service de gestion des commandes.
+     * @param utilisateurService        Service de gestion des utilisateurs.
+     * @param detailsCommandeRepository Référence vers le dépôt des détails de commande.
+     * @param panierService             Service de gestion du panier.
+     * @param commandeRepository        Référence vers le dépôt des commandes.
+     */
     @Autowired
     public CommandesController(CommandeService commandeService, UtilisateurService utilisateurService, DetailsCommandeRepository detailsCommandeRepository, PanierService panierService, CommandeRepository commandeRepository) {
         this.commandeService = commandeService;
@@ -36,24 +47,55 @@ public class CommandesController {
         this.commandeRepository = commandeRepository;
     }
 
+    /**
+     * Affiche la page de paiement.
+     *
+     * @param session La session HTTP.
+     * @param model   Le modèle utilisé pour passer des données à la vue.
+     * @return Le nom de la vue associée à la page de paiement.
+     */
     @GetMapping("/paiement")
     public String afficherPagePaiement(HttpSession session, Model model) {
         Utilisateur utilisateur = utilisateurService.getUtilisateurConnecte(session);
-        model.addAttribute("utilisateur", utilisateur);
-        return "paiement";
+        if (utilisateur != null) {
+            model.addAttribute("utilisateur", utilisateur);
+            return "paiement";
+        } else {
+            return "redirect:/connexion";
+        }
     }
 
-
+    /**
+     * Effectue le paiement d'une commande.
+     *
+     * @param session La session HTTP.
+     * @return Le chemin de redirection après le paiement.
+     */
     @PostMapping("/payer")
     public String effectuerPaiement(HttpSession session) {
-        // Récupérer l'utilisateur connecté
+
         Utilisateur utilisateur = utilisateurService.getUtilisateurConnecte(session);
-        // Récupérer les détails de commande depuis le panier de l'utilisateur
-        List<DetailsCommande> detailsCommandeList = panierService.getDetailsCommandeFromPanier(utilisateur);
-        // Créer une nouvelle commande pour cet utilisateur avec les détails de commande
-        Commande commande = commandeService.creerCommande(utilisateur, detailsCommandeList);
-        commandeRepository.save(commande);
-        return "redirect:/validation-commande";
+        if (utilisateur != null) {
+
+            List<DetailsCommande> detailsCommandeList = panierService.getDetailsCommandeFromPanier(utilisateur);
+
+            Commande commande = commandeService.creerCommande(utilisateur, detailsCommandeList);
+            commandeRepository.save(commande);
+            return "redirect:/validation-commande";
+        } else {
+
+            return "redirect:/connexion";
+        }
+    }
+
+    /**
+     * Affiche la page de validation de commande.
+     *
+     * @return Le nom de la vue associée à la page de validation de commande.
+     */
+    @GetMapping("/validation-commande")
+    public String afficherPageValidationCommande() {
+        return "validation-commande";
     }
 
 }

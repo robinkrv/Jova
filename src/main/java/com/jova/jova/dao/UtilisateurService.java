@@ -103,13 +103,13 @@ public class UtilisateurService {
      * @return L'utilisateur connecté, s'il existe, sinon null.
      */
     public Utilisateur getUtilisateurConnecte(HttpSession session) {
-        // Récupérer l'identifiant de l'utilisateur connecté à partir de la session
+
         Long idUtilisateur = (Long) session.getAttribute("idUtilisateurConnecte");
         if (idUtilisateur != null) {
-            // Si l'identifiant n'est pas null, rechercher l'utilisateur dans la base de données
+
             return utilisateurRepository.findById(idUtilisateur).orElse(null);
         }
-        return null; // Retourner null si aucun utilisateur n'est connecté
+        return null;
     }
 
     /**

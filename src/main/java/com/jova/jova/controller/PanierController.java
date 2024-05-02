@@ -26,18 +26,15 @@ public class PanierController {
 
     @GetMapping("/panier")
     public String afficherPanier(Model model, HttpSession session) {
-        // Récupérer le panier de la session
+
         Panier panier = (Panier) session.getAttribute("panier");
 
-        // Vérifier si le panier est vide
         if (panier != null) {
-            // Calculer le total du panier
 
-            // Ajouter le panier et le total au modèle pour l'afficher dans la vue
             model.addAttribute("panier", panier);
         }
 
-        // Retourner le nom de la vue HTML du panier
+
         return "panier";
     }
 
@@ -47,22 +44,16 @@ public class PanierController {
     public String ajouterAuPanier(@RequestParam("idProduit") Long idProduit,
                                   @RequestParam("quantite") int quantite,
                                   HttpSession session) {
-        // Vérifier si le panier existe déjà dans la session
         Panier panier = (Panier) session.getAttribute("panier");
         if (panier == null) {
-            // Si le panier n'existe pas, créez un nouveau panier pour l'utilisateur
             Utilisateur utilisateur = (Utilisateur) session.getAttribute("utilisateurConnecte");
             panier = panierService.createPanier(utilisateur);
-            // Enregistrez le nouveau panier dans la session
             session.setAttribute("panier", panier);
         }
 
-        // Récupérer le panier et le produit à partir de leur identifiant
         Produit produit = produitService.getProduitById(idProduit).orElse(null);
 
-        // Vérifier si le produit existe
         if (produit != null) {
-            // Ajouter le produit au panier
             panierService.addProduitToPanier(panier, produit, quantite);
             return "Produit ajouté au panier avec succès.";
         } else {
@@ -73,10 +64,8 @@ public class PanierController {
     @PostMapping("/retirer-du-panier")
     @ResponseBody
     public String retirerDuPanier(@RequestParam("idProduit") Long idProduit, HttpSession session) {
-        // Récupérer le panier de la session
-        Panier panier = (Panier) session.getAttribute("panier");
 
-        // Récupérer le produit à partir de son identifiant
+        Panier panier = (Panier) session.getAttribute("panier");
         Produit produit = produitService.getProduitById(idProduit).orElse(null);
 
         // Récupérer le ProduitsPanier correspondant à ce produit dans le panier

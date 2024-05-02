@@ -21,8 +21,8 @@ public class IndexController {
 
     @GetMapping("/")
     public String showHomePage(Model model) {
-        List<Produit> produits = produitService.getAllProduits(); // Récupère tous les produits depuis le service
-        model.addAttribute("produits", produits); // Ajoute la liste des produits au modèle avec le nom "produits"
-        return "index"; // Retourne le nom de la vue HTML
+        List<Produit> produits = produitService.getAllProduits();
+        model.addAttribute("produits", produits);
+        return "index";
     }
 }

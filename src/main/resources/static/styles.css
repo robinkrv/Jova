@@ -438,6 +438,31 @@ main {
 .carousel-item img {
     height: 650px;
 }
+.divPaiement {
+    display: flex;
+    justify-content: center;
+}
+
+.divValidation h5 p {
+    color: #8B4513;
+}
+
+.divValidation img {
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.divPaiement .card-body {
+    text-align: left;
+}
+
+.divPaiement .btn {
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .produitPhares {
         font-family: 'Atma', sans-serif;

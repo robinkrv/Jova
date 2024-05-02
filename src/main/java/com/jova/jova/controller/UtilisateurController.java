@@ -53,13 +53,13 @@ public class UtilisateurController {
     @PostMapping("/connexion")
     public String connecterUtilisateur(@ModelAttribute("utilisateur") Utilisateur utilisateur, Model model, HttpSession session) {
         Optional<Utilisateur> utilisateurOpt = utilisateurService.connecterUtilisateur(utilisateur.getUsername(), utilisateur.getPassword());
-
         if (utilisateurOpt.isPresent()) {
             Utilisateur utilisateurConnecte = utilisateurOpt.get();
             session.setAttribute("utilisateurConnecte", utilisateurConnecte);
             model.addAttribute("utilisateurConnecte", utilisateurConnecte);
 
             model.addAttribute("utilisateurConnecte", utilisateurConnecte.getUsername());
+            model.addAttribute("message", "Vous êtes connecté !");
             return "redirect:/";
         } else {
             model.addAttribute("erreurMessage", "L'identifiant et le mot de passe ne correspondent pas.");

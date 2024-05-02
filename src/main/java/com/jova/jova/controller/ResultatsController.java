@@ -23,17 +23,17 @@ public class ResultatsController {
     @GetMapping("/resultats")
     public String showResultatsPage(@RequestParam(name = "query", required = false) String query, Model model) {
         if (query != null && !query.isEmpty()) {
-            // Effectuer une recherche en fonction de la chaîne de recherche dans la base de données
+
             List<Produit> produitsResultats = produitService.rechercherProduits(query);
             if (produitsResultats.isEmpty()) {
-                // Ajouter un message au modèle indiquant qu'aucun produit n'a été trouvé
+
                 model.addAttribute("aucunProduitTrouve", true);
             } else {
                 model.addAttribute("produitsResultats", produitsResultats);
             }
         }
-        // Ajouter d'autres attributs au modèle si nécessaire
-        return "resultats"; // Assurez-vous d'avoir un template Thymeleaf nommé "resultats.html"
+
+        return "resultats";
     }
 }
 

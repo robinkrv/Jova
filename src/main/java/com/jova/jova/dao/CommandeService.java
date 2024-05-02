@@ -26,37 +26,31 @@ public class CommandeService {
 
     }
 
-    // Créer une nouvelle commande
-    // Créer une nouvelle commande avec des détails de commande
+
     public Commande creerCommande(Utilisateur utilisateur, List<DetailsCommande> detailsCommandeList) {
-        // Créer une nouvelle commande
+
         Commande commande = new Commande();
         commande.setUtilisateur(utilisateur);
         commande.setDateCommande(new Date());
-        commande.setStatut("En attente"); // Par défaut, la commande est en attente
-        commande.setNumeroCommande(genererNumeroCommande()); // Générer un numéro de commande unique
+        commande.setStatut("En attente");
+        commande.setNumeroCommande(genererNumeroCommande());
 
-        // Associer les détails de commande à la commande
+
         for (DetailsCommande detailCommande : detailsCommandeList) {
             detailCommande.setCommande(commande);
         }
 
-        // Enregistrer la commande dans la base de données
         commande = commandeRepository.save(commande);
 
-        // Enregistrer les détails de commande dans la base de données
         ajouterDetailsCommande(commande, detailsCommandeList);
         panierService.viderPanier(utilisateur);
         return commande;
     }
 
 
-
-
-    // Générer un numéro de commande unique
     private long genererNumeroCommande() {
         long numeroCommande = (long) (Math.random() * 1000000000) + 100000000;
-        // Vérifier si le numéro de commande est déjà utilisé
+
         while (commandeRepository.existsByNumeroCommande(numeroCommande)) {
             numeroCommande = (long) (Math.random() * 1000000000) + 100000000;
         }
@@ -64,23 +58,22 @@ public class CommandeService {
     }
 
 
-    // Mettre à jour le statut d'une commande
+
     public void mettreAJourStatutCommande(Commande commande, String nouveauStatut) {
         commande.setStatut(nouveauStatut);
         commandeRepository.save(commande);
     }
 
-    // Ajouter des détails de commande à une commande existante
+
     public void ajouterDetailsCommande(Commande commande, List<DetailsCommande> detailsCommandeList) {
-        // Associer les nouveaux détails de commande à la commande existante
+
         for (DetailsCommande detailCommande : detailsCommandeList) {
             detailCommande.setCommande(commande);
         }
-        // Enregistrer les nouveaux détails de commande dans la base de données
+
         detailsCommandeRepository.saveAll(detailsCommandeList);
     }
 
-    // Supprimer une commande
     public void supprimerCommande(Commande commande) {
         commandeRepository.delete(commande);
     }
